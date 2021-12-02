@@ -13,14 +13,23 @@ public class ActionsClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		System.setProperty("webdriver.chrome.driver", "C:\\selenium\\chromedriver.exe");
-		WebDriver web = new ChromeDriver();
-		web.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		web.get("https://www.amazon.in/");
-		web.manage().window().maximize();
-		Actions act=new Actions(web);
-		act.moveToElement(web.findElement(By.cssSelector("#nav-link-accountList"))).contextClick().build().perform();
-		act.moveToElement(web.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").doubleClick().build().perform();
+		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\844820\\Selenium files\\chromedriver_win32 (4)\\chromedriver.exe");
+        WebDriver web=new ChromeDriver();
+        web.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        web.manage().window().maximize();
+        web.get("https://www.amazon.in");
+        //for mouse over functions use action class and need to build and perform for actions class
+        Actions action= new Actions(web);
+        
+        //go to target element and right(context) click
+        action.moveToElement(web.findElement(By.xpath("//span[@class='nav-line-2']"))).contextClick().build().perform();
+        
+        //select textbox and enter capital letters and select the text
+        action.moveToElement(web.findElement(By.id("twotabsearchtextbox"))).click().keyDown(Keys.SHIFT).sendKeys("hello").doubleClick().build().perform();
+        
+        //close driver
+        web.close();
+        
 	
 		
 		
