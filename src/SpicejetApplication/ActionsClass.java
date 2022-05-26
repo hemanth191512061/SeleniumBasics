@@ -13,7 +13,7 @@ public class ActionsClass {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		 System.setProperty("webdriver.chrome.driver", "C:\\Users\\844820\\Selenium files\\chromedriver_win32 (4)\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "C:\\selenium\\ChromeDriver\\chromedriver.exe");
         WebDriver web=new ChromeDriver();
         web.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         web.manage().window().maximize();
